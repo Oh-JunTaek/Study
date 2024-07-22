@@ -73,3 +73,7 @@ ex_ 직원ID 겹치지 않으면 OK/이름은 동명이인이 있으면 X
     FOREIGN KEY (CourseID) REFERENCES Course(CourseID)
  );
  ```
+** 도메인 (Domain) **
+각 속성이 입력받을 수 있는 값의 정의 및 범위를 의미 (ex_나이 범위를 0~120세정도로 설정하는 것)
+
+### 관계(Relationship)
