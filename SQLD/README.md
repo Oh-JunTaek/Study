@@ -202,3 +202,25 @@ ex_ 직원ID 겹치지 않으면 OK/이름은 동명이인이 있으면 X
 
  ### 상호배타적 관계
  A와B가 C에 소속되었지만 공통부분이 없는 관계
+
+ ### 모델이 표현하는 트랜잭션의 이해
+ 트랜잭션 : 데이터베이스의 논리적인 연산 단위 혹은 논리적인 업무단위
+
+ ### NULL
+ 아직 정해지지 않은 값
+
+ ### 본질식별자 VS 인조식별자
+ 업무에 의해 생성된 VS 편의를 위해 인위로 만든
+
+ ## 2과목 
+ ### 데이터베이스 관련 용어 정리
+ * <기출>DDL[DataDefinitionLanguage](데이터 정의어) : CREATE, ALTER, DROP, RENAME, TRUNCATE
+ * <기출>DML[DataManipulationLanguage](데이터 조작어) : SELECT, INSERT, UPDATE, DELETE, MERGE
+ * <기출>DCL[DataControlLanguage](데이터 제의어) : GRANT, REVOKE
+ * <기출>TCL[TransactionControlLanguage](트랜잭션 제어어) : COMMIT, ROLLBACK, SAVEPOINT
+
+ ### SELECT
+ 테이블에서 원하는 데이터를 조회할 때 사용하는 문법
+
+ * SELECT * FROM TB_PRD : TB_PRD 테이블의 모든 컬럼 정보를 출력
+ * SELECT DISTINCT PRD_TYPE FROM TB_PRD; : TB_PRD 테이블의 PRD_TYPE컬럼을 기준으로 값을 중복없이 출력
