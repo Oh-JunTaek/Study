@@ -224,3 +224,4 @@ ex_ 직원ID 겹치지 않으면 OK/이름은 동명이인이 있으면 X
 
  * SELECT * FROM TB_PRD : TB_PRD 테이블의 모든 컬럼 정보를 출력
  * SELECT DISTINCT PRD_TYPE FROM TB_PRD; : TB_PRD 테이블의 PRD_TYPE컬럼을 기준으로 값을 중복없이 출력
+ * AS[ALIAS] : SELECT에서 출력하는 컬럼에 새로운 별명 부여
