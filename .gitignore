@@ -33,3 +33,5 @@ __pycache__/
 *.py[cod]
 *$.py[cod]
 .pyc
+langchain_RAG/.env
+/langchain_RAG/study
