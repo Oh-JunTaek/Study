@@ -4,7 +4,7 @@ from flask import Flask
 from flask_cors import CORS
 from routes.nlp_routes import nlp_blueprint
 from services.error_handler import register_error_handlers
-from mongo_client import get_mongo_client
+from services.mongo_client import get_mongo_client
 
 # 플라스크 앱 정의
 app = Flask(__name__)
