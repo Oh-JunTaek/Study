@@ -35,3 +35,4 @@ __pycache__/
 .pyc
 langchain_RAG/.env
 /langchain_RAG/study
+/langchain_RAG/test
