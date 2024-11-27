@@ -1,36 +1,20 @@
 import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
 
-# 모델 및 토크나이저 경로 설정
+# 모델 경로
 model_path = "C:/Users/dev/.llama/checkpoints/Llama3.2-1B-Instruct/consolidated.00.pth"
-tokenizer_path = "C:/Users/dev/.llama/checkpoints/Llama3.2-1B-Instruct/tokenizer.model"
 
-# 토크나이저 및 모델 로드 (HuggingFace transformers가 있다고 가정)
-tokenizer = AutoTokenizer.from_pretrained(tokenizer_path)
-model = AutoModelForCausalLM.from_pretrained(model_path)
+# 모델을 CPU로 매핑하여 로드
+model = torch.load(model_path, map_location=torch.device('cpu'))
 
-# 간단한 텍스트 생성 함수
-def generate_text(model, tokenizer, input_text):
-    inputs = tokenizer(input_text, return_tensors="pt")
-    outputs = model.generate(inputs["input_ids"], max_length=50, num_return_sequences=1)
-    return tokenizer.decode(outputs[0], skip_special_tokens=True)
+# 간단한 텍스트 생성 함수 (모델이 어떻게 사용되는지에 따라 수정 필요)
+def generate_text(input_text):
+    # 입력 텍스트 처리 (모델 구조에 따라 다를 수 있음)
+    # 현재는 가정된 예시 코드
+    input_tensor = torch.tensor([1])  # 임시 입력 (실제 토큰화를 적용해야 함)
+    with torch.no_grad():
+        output = model(input_tensor)
+    return output
 
-# 대화형 테스트
-def chat_with_model():
-    print("모델과의 대화가 시작되었습니다. '종료'라고 입력하면 종료됩니다.")
-    while True:
-        user_input = input("사용자: ")
-        if user_input.lower() == "종료":
-            print("대화를 종료합니다.")
-            break
-
-        # 모델에게 사용자 입력 전달
-        response = generate_text(model, tokenizer, user_input)
-        print(f"모델: {response}")
-
-# '너는 누구야?'로 테스트
-response = generate_text(model, tokenizer, "너는 누구야?")
+# 텍스트 생성 테스트
+response = generate_text("안녕하세요, 모델을 테스트합니다.")
 print("모델 응답:", response)
-
-# 대화형 모드를 원하면 이 함수 호출
-# chat_with_model()
