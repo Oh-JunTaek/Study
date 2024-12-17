@@ -27,7 +27,7 @@ RAG는 **문서 검색**과 **생성**을 결합한 기술로, 주어진 질문�
 
     ```bash
     # window
-    {가상환경}\Scripts\activate
+    study\Scripts\activate
 
     #Mac, Linux
     source {가상환경}/bin/activate
